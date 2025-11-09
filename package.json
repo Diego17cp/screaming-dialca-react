@@ -1,0 +1,56 @@
+{
+  "name": "screaming-dialca-react",
+  "version": "0.0.0",
+  "description": "CLI tool to create Vite React projects with Screaming Architecture automatically",
+  "type": "module",
+  "bin": {
+    "screaming-dialca-react": "./bin/index.js",
+    "create-screaming-dialca-react": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "package.json",
+    "utils",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite",
+    "react",
+    "screaming-architecture",
+    "template",
+    "cli",
+    "bin",
+    "project-generator",
+    "scaffold",
+    "typescript",
+    "javascript"
+  ],
+  "author": {
+    "name": "Dialcadev",
+    "url": "https://github.com/Diego17cp"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.8.1",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "execa": "9.6.0",
+    "fs-extra": "11.3.2",
+    "kolorist": "1.8.0",
+    "prompts": "2.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Diego17cp/screaming-dialca-react"
+  },
+  "bugs": {
+    "url": "https://github.com/Diego17cp/screaming-dialca-react/issues"
+  },
+  "homepage": "https://github.com/Diego17cp/screaming-dialca-react#readme"
+}
