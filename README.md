@@ -32,18 +32,25 @@ Screaming Architecture is an approach where your project structure immediately r
 ### 📦 Installation
 
 ```bash
-# Using npm
+# Recommended (works everywhere, no global installation needed)
 npx screaming-dialca-react
 
-# Using yarn
-yarn create screaming-dialca-react
+# Global installation (choose your package manager)
+npm install -g screaming-dialca-react
+# OR
+yarn global add screaming-dialca-react  
+# OR
+pnpm add -g screaming-dialca-react
 
-# Using pnpm
-pnpm create screaming-dialca-react
-
-# Using bun
-bun create screaming-dialca-react
+# After global installation, run with:
+screaming-dialca-react
 ```
+
+### ⚠️ Important Notes
+
+- **npx** is recommended as it always works without global installation
+- If you install globally with one package manager (e.g., `npm`), use the same manager to run commands
+- Global installations create a system-wide binary, so you can run `screaming-dialca-react` directly from anywhere
 
 ### 🏃‍♂️ Quick Start
 
@@ -120,18 +127,21 @@ La Screaming Architecture es un enfoque donde la estructura de tu proyecto revel
 ### 📦 Instalación
 
 ```bash
-# Usando npm
+# Recomendado (funciona en todas partes, no se necesita instalación global)
 npx screaming-dialca-react
-
-# Usando yarn
-yarn create screaming-dialca-react
-
-# Usando pnpm
-pnpm create screaming-dialca-react
-
-# Usando bun
-bun create screaming-dialca-react
+# Instalación global (elige tu gestor de paquetes)
+npm install -g screaming-dialca-react
+# O
+ yarn global add screaming-dialca-react  
+# O
+ pnpm add -g screaming-dialca-react
+# Después de la instalación global, ejecuta con:
+screaming-dialca-react
 ```
+### ⚠️ Notas Importantes
+- **npx** es recomendado ya que siempre funciona sin necesidad de instalación global
+- Si instalas globalmente con un gestor de paquetes (por ejemplo, `npm`), usa el mismo gestor para ejecutar los comandos
+- Las instalaciones globales crean un binario a nivel del sistema, por lo que puedes ejecutar `screaming-dialca-react` directamente desde cualquier lugar
 
 ### 🏃‍♂️ Inicio Rápido
 
