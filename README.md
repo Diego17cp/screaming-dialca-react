@@ -1,2 +1,186 @@
-# screaming-dialca-react
-Script to create Vite React Projects with Screaming Architecture automatically.
+# 🏗️ Screaming Dialca React
+
+[![npm version](https://badge.fury.io/js/screaming-dialca-react.svg)](https://badge.fury.io/js/screaming-dialca-react)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> Script to create Vite React Projects with Screaming Architecture automatically.
+> 
+> Script para crear proyectos de Vite React con Screaming Architecture automáticamente.
+
+[English](#english) | [Español](#español)
+
+---
+
+## English
+
+### 🚀 What is Screaming Architecture?
+
+Screaming Architecture is an approach where your project structure immediately reveals what the application does. Instead of organizing by technical layers, you organize by features and business domains, making the codebase more maintainable and intuitive.
+
+### ✨ Features
+
+- 🎯 **Automatic Vite React project creation** with Screaming Architecture
+- 📦 **Package manager detection** (npm, yarn, pnpm, bun)
+- 🔧 **Multiple React variants support**:
+  - React (JavaScript)
+  - React (TypeScript)
+  - React + SWC
+  - React + SWC (TypeScript)
+- 📁 **Pre-configured folder structure** following Screaming Architecture principles
+- 📚 **Automatic documentation** generation
+
+### 📦 Installation
+
+```bash
+# Using npm
+npx screaming-dialca-react
+
+# Using yarn
+yarn create screaming-dialca-react
+
+# Using pnpm
+pnpm create screaming-dialca-react
+
+# Using bun
+bun create screaming-dialca-react
+```
+
+### 🏃‍♂️ Quick Start
+
+1. Run the command:
+   ```bash
+   npx screaming-dialca-react
+   ```
+
+2. Follow the interactive prompts:
+   - Enter your project name
+   - Select a React variant
+
+3. Navigate to your project and start developing:
+   ```bash
+   cd your-project-name
+   npm install
+   npm run dev
+   ```
+
+### 📁 Generated Structure
+
+```
+your-project/
+├── src/
+│   ├── app/           # Application-level components and configurations
+│   ├── core/          # Application core (routing, theming, etc.)
+│   ├── features/      # Feature-based modules
+│   │   └── example/   # Example feature
+│   │       ├── components/   # Feature-specific components
+│   │       ├── hooks/        # Feature-specific hooks
+│   │       ├── utils/        # Feature-specific utilities
+│   │       ├── pages/        # Feature-specific pages
+│   │       ├── constants/    # Feature-specific constants
+│   │       ├── types/        # Feature-specific types (TypeScript)
+│   │       ├── contexts/     # Feature-specific contexts
+│   │       ├── stores/       # Feature-specific state management
+│   │       └── services/     # Feature-specific services (API calls)
+│   └── shared/        # Shared components, hooks, and utilities
+└── README_SCREAMING.md  # Architecture documentation
+```
+
+### 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+### 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### 👨‍💻 Author
+
+Created by [Dialcadev](https://github.com/Diego17cp)
+
+---
+
+## Español
+
+### 🚀 ¿Qué es la Screaming Architecture?
+
+La Screaming Architecture es un enfoque donde la estructura de tu proyecto revela inmediatamente qué hace la aplicación. En lugar de organizar por capas técnicas, organizas por características y dominios de negocio, haciendo que el código sea más mantenible e intuitivo.
+
+### ✨ Características
+
+- 🎯 **Creación automática de proyectos Vite React** con Screaming Architecture
+- 📦 **Detección del gestor de paquetes** (npm, yarn, pnpm, bun)
+- 🔧 **Soporte para múltiples variantes de React**:
+  - React (JavaScript)
+  - React (TypeScript)
+  - React + SWC
+  - React + SWC (TypeScript)
+- 📁 **Estructura de carpetas preconfigurada** siguiendo los principios de Screaming Architecture
+- 📚 **Generación automática de documentación**
+
+### 📦 Instalación
+
+```bash
+# Usando npm
+npx screaming-dialca-react
+
+# Usando yarn
+yarn create screaming-dialca-react
+
+# Usando pnpm
+pnpm create screaming-dialca-react
+
+# Usando bun
+bun create screaming-dialca-react
+```
+
+### 🏃‍♂️ Inicio Rápido
+
+1. Ejecuta el comando:
+   ```bash
+   npx screaming-dialca-react
+   ```
+
+2. Sigue las instrucciones interactivas:
+   - Ingresa el nombre de tu proyecto
+   - Selecciona una variante de React
+
+3. Navega a tu proyecto y comienza a desarrollar:
+   ```bash
+   cd nombre-de-tu-proyecto
+   npm install
+   npm run dev
+   ```
+
+### 📁 Estructura Generada
+
+```
+tu-proyecto/
+├── src/
+│   ├── app/           # Componentes y configuraciones a nivel de aplicación
+│   ├── core/          # Núcleo de la aplicación (enrutamiento, temas, etc.)
+│   ├── features/      # Módulos basados en características
+│   │   └── example/   # Característica de ejemplo
+│   │       ├── components/   # Componentes específicos de la característica
+│   │       ├── hooks/        # Hooks específicos de la característica
+│   │       ├── utils/        # Utilidades específicas de la característica
+│   │       ├── pages/        # Páginas específicas de la característica
+│   │       ├── constants/    # Constantes específicas de la característica
+│   │       ├── types/        # Tipos específicos de la característica (TypeScript)
+│   │       ├── contexts/     # Contextos específicos de la característica
+│   │       ├── stores/       # Gestión de estado específica de la característica
+│   │       └── services/     # Servicios específicos de la característica (llamadas API)
+│   └── shared/        # Componentes, hooks y utilidades compartidas
+└── README_SCREAMING.md  # Documentación de la arquitectura
+```
+
+### 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas! Por favor, siéntete libre de enviar un Pull Request.
+
+### 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+### 👨‍💻 Autor
+
+Creado por [Dialcadev](https://github.com/Diego17cp)
