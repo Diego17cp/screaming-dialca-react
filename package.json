@@ -1,6 +1,6 @@
 {
   "name": "screaming-dialca-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CLI tool to create Vite React projects with Screaming Architecture automatically",
   "type": "module",
   "bin": {
