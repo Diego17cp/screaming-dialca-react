@@ -81,17 +81,19 @@ async function applyScreamingArchitecture(projectPath, variant) {
 		await fs.move(originalAppFile, appFile);
 	}
 	const mainFile = path.join(projectPath, "src", `main.${ext}`);
-	let mainContent = await fs.readFile(mainFile, "utf-8");
-	mainContent = mainContent.replace(
-		`import App from './App.${ext}';`,
-		`import App from './app/App.${ext}';`
-	);
-	await fs.writeFile(mainFile, mainContent, "utf-8");
+	let mainContent = await fs.readFile(mainFile, "utf-8");    
+    mainContent = mainContent.replace(
+        `import App from './App.${ext}'`,
+        `import App from './app/App.${ext}'`
+    );    
+    mainContent = mainContent.replace(
+        `import App from "./App.${ext}"`,
+        `import App from "./app/App.${ext}"`
+    );
+    await fs.writeFile(mainFile, mainContent, "utf-8");
 
-	// Crear una feature de prueba
 	const featurePath = path.join(projectPath, "src", "features", "example");
 	await fs.ensureDir(featurePath);
-	// Inserar carpets screaming en esta feature
 	const featureFolders = [
 		"components",
 		"hooks",
