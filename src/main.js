@@ -70,25 +70,29 @@ main().catch((err) => {
 
 async function applyScreamingArchitecture(projectPath, variant) {
 	const folders = ["app", "core", "features", "shared"];
-	for (const folder of folders) {
-		await fs.ensureDir(path.join(projectPath, "src", folder));
-	}
+	for (const folder of folders) await fs.ensureDir(path.join(projectPath, "src", folder));
+
     const isTypeScript = variant.includes("-ts");
     const ext = isTypeScript ? "tsx" : "jsx";
+
 	const originalAppFile = path.join(projectPath, "src", `App.${ext}`);
     const appFile = path.join(projectPath, "src", "app", `App.${ext}`);
+	const originalAppCss = path.join(projectPath, "src", "App.css");
+	const appCssFile = path.join(projectPath, "src", "app", "App.css");
+
 	if (fs.existsSync(originalAppFile)) {
 		await fs.move(originalAppFile, appFile);
+		let appContent = await fs.readFile(appFile, "utf-8");
+        appContent = appContent.replace(/\.\/assets\//g, "../assets/");
+		await fs.writeFile(appFile, appContent, "utf-8");
 	}
+	if (fs.existsSync(originalAppCss)) await fs.move(originalAppCss, appCssFile);
+
 	const mainFile = path.join(projectPath, "src", `main.${ext}`);
 	let mainContent = await fs.readFile(mainFile, "utf-8");    
     mainContent = mainContent.replace(
         `import App from './App.${ext}'`,
         `import App from './app/App.${ext}'`
-    );    
-    mainContent = mainContent.replace(
-        `import App from "./App.${ext}"`,
-        `import App from "./app/App.${ext}"`
     );
     await fs.writeFile(mainFile, mainContent, "utf-8");
 
