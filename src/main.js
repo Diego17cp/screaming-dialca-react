@@ -31,17 +31,25 @@ async function main() {
 		);
 		process.exit(1);
 	}
-	const { variant } = await prompts({
-		type: "select",
-		name: "variant",
-		message: "Select a variant:",
-		choices: [
-			{ title: "React (JavaScript)", value: "react" },
-			{ title: "React (TypeScript)", value: "react-ts" },
-			{ title: "React + SWC", value: "react-swc" },
-			{ title: "React + SWC (TypeScript)", value: "react-swc-ts" },
-		],
-	});
+	const { variant, installDeps } = await prompts([
+		{
+			type: "select",
+			name: "variant",
+			message: "Select a variant:",
+			choices: [
+				{ title: "React (JavaScript)", value: "react" },
+				{ title: "React (TypeScript)", value: "react-ts" },
+				{ title: "React + SWC", value: "react-swc" },
+				{ title: "React + SWC (TypeScript)", value: "react-swc-ts" }
+			]
+		},
+		{
+			type: "confirm",
+			name: "installDeps",
+			message: "Do you want to install dependencies after project creation?",
+			initial: true
+		}
+	]);
 	const pkgManager = detectPackageManager();
 
     console.log(cyan(`\nDetected package manager: ${pkgManager}`));
@@ -50,16 +58,25 @@ async function main() {
 	await execa(
 		"npx",
 		["create-vite@latest", projectName, "--template", variant],
-		{ stdio: "inherit" }
+		{ stdio: installDeps ? "ignore" : "inherit" }
 	);
 	console.log(green(`\nProject ${projectName} created successfully.`));
-	console.log(`\nAplying Screaming Architecture...`);
-	await applyScreamingArchitecture(projectPath, variant);
 
+	console.log(cyan(`\nAplying Screaming Architecture...`));
+	await applyScreamingArchitecture(projectPath, variant);
 	console.log(green(`\nScreaming Architecture applied successfully.`));
+
+	if (installDeps) {
+		console.log(cyan(`\nInstalling dependencies with ${pkgManager}...\n`));
+		await execa(pkgManager, ["install"], {
+			cwd: projectPath,
+			stdio: "inherit"
+		})
+		console.log(green(`\nDependencies installed successfully.`));
+	}
 	console.log(cyan(`\nNext steps:`));
 	console.log(yellow(`  cd ${projectName}`));
-	console.log(yellow(`  ${pkgManager} install`));
+	if (!installDeps) console.log(yellow(`  ${pkgManager} install`));
 	console.log(yellow(`  ${pkgManager} run dev\n`));
 }
 
